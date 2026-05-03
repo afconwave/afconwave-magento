@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  mariadb:
+    image: bitnami/mariadb:10.6
+    environment:
+      - MARIADB_USER=bn_magento
+      - MARIADB_DATABASE=bitnami_magento
+      - MARIADB_PASSWORD=bitnami_password
+      - ALLOW_EMPTY_PASSWORD=yes
+
+  magento:
+    image: bitnami/magento:2.4
+    container_name: magento-server
+    ports:
+      - '8080:8080'
+      - '8443:8443'
+    environment:
+      - MAGENTO_DATABASE_HOST=mariadb
+      - MAGENTO_DATABASE_PORT_NUMBER=3306
+      - MAGENTO_DATABASE_USER=bn_magento
+      - MAGENTO_DATABASE_PASSWORD=bitnami_password
+      - MAGENTO_DATABASE_NAME=bitnami_magento
+      - MAGENTO_USERNAME=user
+      - MAGENTO_PASSWORD=bitnami_password
+      - MAGENTO_EMAIL=admin@example.com
+      - MAGENTO_HOST=localhost
+    depends_on:
+      - mariadb
+    volumes:
+      - magento_data:/bitnami/magento
+
+volumes:
+  magento_data:
+    driver: local

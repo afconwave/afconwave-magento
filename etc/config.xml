@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+    AfconWave Gateway — Default Payment Configuration
+    This file registers the payment method and its default settings in Magento.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <afconwave_gateway>
+                <active>1</active>
+                <model>AfconWave\Payment\Model\Payment\AfconWave</model>
+                <title>AfconWave — Mobile Money &amp; Card</title>
+                <logo>AfconWave_Payment::images/afconwave_megator_logo.png</logo>
+                <order_status>pending</order_status>
+                <payment_action>authorize_capture</payment_action>
+                <allowspecific>0</allowspecific>
+                <sandbox_mode>1</sandbox_mode>
+                <secret_key></secret_key>
+                <webhook_secret></webhook_secret>
+                <sort_order>10</sort_order>
+            </afconwave_gateway>
+        </payment>
+    </default>
+</config>
