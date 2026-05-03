@@ -2,7 +2,7 @@
   "name": "afconwave/module-payment",
   "description": "AfconWave Magento 2 Payment Gateway",
   "type": "magento2-module",
-  "version": "1.0.0",
+  "license": "proprietary",
   "autoload": {
     "files": [
       "registration.php"
