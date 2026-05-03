@@ -72,4 +72,4 @@ docker exec -it magento-server php bin/magento setup:upgrade
 ---
 
 ## License
-MIT © AfconWave
+This project is licensed under the MIT License - see the `LICENSE` file for details.
